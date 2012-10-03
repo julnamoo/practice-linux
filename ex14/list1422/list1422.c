@@ -4,7 +4,7 @@
 #define VENDOR_ID 0x0e0f;
 #define PRODUCT_ID 0x0003;
 
-int main(argc, char* argv[]) {
+int main(int argc, char* argv[]) {
   HIDInterface* hid = NULL;
   int if_no = 0;
   HIDInterfaceMatcher matcher = { VENDOR_ID, PRODUCT_ID, NULL, NULL, 0 };
@@ -36,7 +36,7 @@ int main(argc, char* argv[]) {
   /* close device */
   if (hid_close(hid) != 0) {
     fprintf(stderr, "Cannot close HID device\n");
-    return 2;
+    return 1;
   }
 
   /* terminate */

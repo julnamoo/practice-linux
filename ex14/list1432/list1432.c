@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
     printf("device %d [%s] is ready\n", i, devices[i]);
 
     /* release device */
-    if (idevicd_free(device) != 0) {
+    if (idevice_free(device) != 0) {
       fprintf(stderr, "Cannot free device[%s]\n", devices[i]);
       return 1;
     }

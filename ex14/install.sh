@@ -1,4 +1,4 @@
-!#/bin/sh
+#!/bin/sh
 sudo apt-get install -y thinkfiger-tools
 echo "Start tf-tool\n"
 tf-tool --acquire --verbose
