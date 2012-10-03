@@ -5,5 +5,5 @@ find_package(PkgConfig)
 pkg_search_module(GTK REQUIRED gtk+-2.0)
 include_directories(${GTK_INCLUDE_DIRS})
 
-add_executable(cvx main.c cvxfield.c)
+add_executable(cvx main.c cvxfield.c cvxnode.c)
 target_link_libraries(cvx ${GTK_LIBRARIES})

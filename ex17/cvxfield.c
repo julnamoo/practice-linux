@@ -3,7 +3,12 @@
 
 static gboolean cvx_field_expose_event(GtkWidget* widget,
     GdkEventExpose event, gpointer user_data) {
-  g_print("exposed!\n");
+  CvxField* field = (CvxField*) user_data;
+  GdkWindow* drawable = widget->window;
+  cairo_t* cr = gdk_cairo_create(drawable);
+
+  cvx_node_render(field->node, cr);
+  cairo_destroy(cr);
   return FALSE;
 }
 
@@ -23,6 +28,7 @@ CvxField* cvx_field_new(GtkWindow* window,
   g_signal_connect(GTK_OBJECT(window), "expose-event",
       G_CALLBACK(cvx_field_expose_event), retvar);
   retvar->canvas = canvas;
+  retvar->node = cvx_node_new(retvar, width/2, height/2);
 
   return retvar;
 }

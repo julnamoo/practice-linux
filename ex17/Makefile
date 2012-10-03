@@ -132,6 +132,30 @@ cvxfield.c.s:
 	$(MAKE) -f CMakeFiles/cvx.dir/build.make CMakeFiles/cvx.dir/cvxfield.c.s
 .PHONY : cvxfield.c.s
 
+cvxnode.o: cvxnode.c.o
+.PHONY : cvxnode.o
+
+# target to build an object file
+cvxnode.c.o:
+	$(MAKE) -f CMakeFiles/cvx.dir/build.make CMakeFiles/cvx.dir/cvxnode.c.o
+.PHONY : cvxnode.c.o
+
+cvxnode.i: cvxnode.c.i
+.PHONY : cvxnode.i
+
+# target to preprocess a source file
+cvxnode.c.i:
+	$(MAKE) -f CMakeFiles/cvx.dir/build.make CMakeFiles/cvx.dir/cvxnode.c.i
+.PHONY : cvxnode.c.i
+
+cvxnode.s: cvxnode.c.s
+.PHONY : cvxnode.s
+
+# target to generate assembly for a file
+cvxnode.c.s:
+	$(MAKE) -f CMakeFiles/cvx.dir/build.make CMakeFiles/cvx.dir/cvxnode.c.s
+.PHONY : cvxnode.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -168,6 +192,9 @@ help:
 	@echo "... cvxfield.o"
 	@echo "... cvxfield.i"
 	@echo "... cvxfield.s"
+	@echo "... cvxnode.o"
+	@echo "... cvxnode.i"
+	@echo "... cvxnode.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

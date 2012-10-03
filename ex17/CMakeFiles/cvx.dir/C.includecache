@@ -6,17 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/julie/repo/src/cinlinux/ex17/cvxfield.c
-stdlib.h
--
-cvxfield.h
-/home/julie/repo/src/cinlinux/ex17/cvxfield.h
-
 /home/julie/repo/src/cinlinux/ex17/cvxfield.h
 gtk/gtk.h
 -
+cvxnode.h
+/home/julie/repo/src/cinlinux/ex17/cvxnode.h
 
-/home/julie/repo/src/cinlinux/ex17/main.c
+/home/julie/repo/src/cinlinux/ex17/cvxnode.c
+stdlib.h
+-
+cvxnode.h
+/home/julie/repo/src/cinlinux/ex17/cvxnode.h
+
+/home/julie/repo/src/cinlinux/ex17/cvxnode.h
+gtk/gtk.h
+-
 cvxfield.h
 /home/julie/repo/src/cinlinux/ex17/cvxfield.h
 

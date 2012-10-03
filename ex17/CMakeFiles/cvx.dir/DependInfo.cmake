@@ -5,6 +5,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_C
   "/home/julie/repo/src/cinlinux/ex17/cvxfield.c" "/home/julie/repo/src/cinlinux/ex17/CMakeFiles/cvx.dir/cvxfield.c.o"
+  "/home/julie/repo/src/cinlinux/ex17/cvxnode.c" "/home/julie/repo/src/cinlinux/ex17/CMakeFiles/cvx.dir/cvxnode.c.o"
   "/home/julie/repo/src/cinlinux/ex17/main.c" "/home/julie/repo/src/cinlinux/ex17/CMakeFiles/cvx.dir/main.c.o"
   )
 SET(CMAKE_C_COMPILER_ID "GNU")

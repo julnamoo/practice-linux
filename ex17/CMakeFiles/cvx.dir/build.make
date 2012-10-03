@@ -94,16 +94,42 @@ CMakeFiles/cvx.dir/cvxfield.c.o.provides: CMakeFiles/cvx.dir/cvxfield.c.o.requir
 CMakeFiles/cvx.dir/cvxfield.c.o.provides.build: CMakeFiles/cvx.dir/cvxfield.c.o
 .PHONY : CMakeFiles/cvx.dir/cvxfield.c.o.provides.build
 
+CMakeFiles/cvx.dir/cvxnode.c.o: CMakeFiles/cvx.dir/flags.make
+CMakeFiles/cvx.dir/cvxnode.c.o: cvxnode.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/julie/repo/src/cinlinux/ex17/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/cvx.dir/cvxnode.c.o"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/cvx.dir/cvxnode.c.o   -c /home/julie/repo/src/cinlinux/ex17/cvxnode.c
+
+CMakeFiles/cvx.dir/cvxnode.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cvx.dir/cvxnode.c.i"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/julie/repo/src/cinlinux/ex17/cvxnode.c > CMakeFiles/cvx.dir/cvxnode.c.i
+
+CMakeFiles/cvx.dir/cvxnode.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cvx.dir/cvxnode.c.s"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/julie/repo/src/cinlinux/ex17/cvxnode.c -o CMakeFiles/cvx.dir/cvxnode.c.s
+
+CMakeFiles/cvx.dir/cvxnode.c.o.requires:
+.PHONY : CMakeFiles/cvx.dir/cvxnode.c.o.requires
+
+CMakeFiles/cvx.dir/cvxnode.c.o.provides: CMakeFiles/cvx.dir/cvxnode.c.o.requires
+	$(MAKE) -f CMakeFiles/cvx.dir/build.make CMakeFiles/cvx.dir/cvxnode.c.o.provides.build
+.PHONY : CMakeFiles/cvx.dir/cvxnode.c.o.provides
+
+CMakeFiles/cvx.dir/cvxnode.c.o.provides.build: CMakeFiles/cvx.dir/cvxnode.c.o
+.PHONY : CMakeFiles/cvx.dir/cvxnode.c.o.provides.build
+
 # Object files for target cvx
 cvx_OBJECTS = \
 "CMakeFiles/cvx.dir/main.c.o" \
-"CMakeFiles/cvx.dir/cvxfield.c.o"
+"CMakeFiles/cvx.dir/cvxfield.c.o" \
+"CMakeFiles/cvx.dir/cvxnode.c.o"
 
 # External object files for target cvx
 cvx_EXTERNAL_OBJECTS =
 
 cvx: CMakeFiles/cvx.dir/main.c.o
 cvx: CMakeFiles/cvx.dir/cvxfield.c.o
+cvx: CMakeFiles/cvx.dir/cvxnode.c.o
 cvx: CMakeFiles/cvx.dir/build.make
 cvx: CMakeFiles/cvx.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C executable cvx"
@@ -115,6 +141,7 @@ CMakeFiles/cvx.dir/build: cvx
 
 CMakeFiles/cvx.dir/requires: CMakeFiles/cvx.dir/main.c.o.requires
 CMakeFiles/cvx.dir/requires: CMakeFiles/cvx.dir/cvxfield.c.o.requires
+CMakeFiles/cvx.dir/requires: CMakeFiles/cvx.dir/cvxnode.c.o.requires
 .PHONY : CMakeFiles/cvx.dir/requires
 
 CMakeFiles/cvx.dir/clean:
