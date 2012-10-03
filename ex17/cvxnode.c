@@ -27,3 +27,22 @@ void cvx_node_render(CvxNode* node, cairo_t* cr) {
   cairo_set_source_rgb(cr, 0.0, 0.0, 0.0);
   cairo_stroke(cr);
 }
+
+gboolean cvx_node_is_inside_p(CvxNode* node, gint x, gint y) {
+  double ulx = node->x - node->width/2.0;
+  double uly = node->y - node->height/2.0;
+  double lrx = node->x + node->width/2.0;
+  double lry = node->y + node->height/2.0;
+  
+  return ((ulx < x) && (x < lrx)) && ((uly < y) && (y < lry));
+}
+
+void cvx_node_move_to(CvxNode* node, gint x, gint y) {
+  node->x = x + node->dx;
+  node->y = y + node->dy;
+}
+
+void cvx_node_set_difference(CvxNode* node, gint x, gint y) {
+  node->dx = node->x - x;
+  node->dy = node->y - y;
+}
