@@ -9,6 +9,7 @@ typedef struct _CvxField CvxField;
 
 #include "cvxnode.h"
 #include "cvxnodelist.h"
+#include "cvxpolygon.h"
 
 struct _CvxField {
   GtkWindow* window;
@@ -16,6 +17,7 @@ struct _CvxField {
 
   CvxNodeList* node_list;
   CvxNode* active_node;
+  CvxPolygon* polygon;
 };
 
 CvxField* cvx_field_new(GtkWindow* window,

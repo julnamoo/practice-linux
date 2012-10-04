@@ -10,6 +10,7 @@ static gboolean cvx_field_expose_event(GtkWidget* widget,
   gdk_window_clear(drawable);
 
   cr = gdk_cairo_create(drawable);
+  cvx_polygon_render(field->polygon, cr);
   cvx_node_list_render(field->node_list, cr);
   cairo_destroy(cr);
 
@@ -125,6 +126,7 @@ CvxField* cvx_field_new(GtkWindow* window,
   retvar->canvas = canvas;
 
   retvar->node_list = cvx_node_list_new(retvar, width, height);
+  retvar->polygon = cvx_polygon_new(retvar, retvar->node_list->nodes);
   retvar->active_node = NULL;
   return retvar;
 }
