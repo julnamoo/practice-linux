@@ -12,7 +12,7 @@ static void gnFail(const char *fname, const char *msg,
   if (name != NULL) {
       fprintf(stderr, " (in %s)", name);
   }
-  fprintf(stderr, ": %s\n" msb);
+  fprintf(stderr, ": %s\n", msg);
   if (arg != NULL && *arg != '\0') {
     fprintf(stderr, "    offending text: %s\n", arg);
   }
@@ -23,10 +23,10 @@ static void gnFail(const char *fname, const char *msg,
 static long getNum(const char *fname, const char *arg, int flags,
     const char *name) {
   long res;
-  char* endptf;
+  char* endptr;
   int base;
   
-  uf (arg == NULL || *arg == '\0') {
+  if (arg == NULL || *arg == '\0') {
     gnFail(fname, "nul or empty string", arg, name);
   }
 
