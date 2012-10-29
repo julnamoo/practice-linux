@@ -1,3 +1,6 @@
+// Julie Kim (julie114.kim@gmail.com)
+// Simple program printing magic numbers of reboot systemcall.
+// It prints hexadecimal values of magic numbers.
 #include <stdio.h>
 #include <linux/reboot.h>
 
