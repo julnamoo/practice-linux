@@ -25,7 +25,7 @@ static void outputError(Boolean useErr, int err, Boolean flushStdout,
 #define BUF_SIZE 500
   char buf[BUF_SIZE], userMsg[BUF_SIZE], errText[BUF_SIZE];
   vsnprintf(userMsg, BUF_SIZE, format, ap);
-  if (userErr) {
+  if (useErr) {
     snprintf(errText, BUF_SIZE, " [%s %s]",
         (err > 0 && err <= MAX_ENAME) ?
         ename[err] : "?UNKNOWN?", strerror(err));
@@ -59,7 +59,7 @@ void errExit(const char *format, ...) {
   va_list argList;
 
   va_start(argList, format);
-  outputError(TRUE, errno, format, argList);
+  outputError(TRUE, errno, TRUE, format, argList);
   va_end(argList);
 
   terminate(TRUE);
