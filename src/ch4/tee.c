@@ -15,7 +15,6 @@
 int main(int argc, char* argv[]) {
   int opt;
   int outputFd;
-  char buf;
   ssize_t numRead, numWritten; 
 
   while ((opt = getopt(argc, argv, "a:")) != -1) {
