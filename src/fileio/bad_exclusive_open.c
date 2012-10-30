@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
   }
 
   fd = open(argv[1], O_WRONLY); 
-  if (fd == -1) {
+  if (fd != -1) {
     printf("[PID %ld] File \"%s\" already exists\n", (long) getpid(), argv[1]);
     close(fd);
   } else {
@@ -21,6 +21,10 @@ int main(int argc, char** argv) {
       errExit("open");
     } else {
       /* probability fail point */
+      printf("[PID %ld] File \"%s\" doesn't exist yet\n",
+          (long) getpid(), argv[1]);
+      sleep(5);
+      printf("[PID %ld] Done sleeping...\n", (long) getpid());
       fd = open(argv[1], O_WRONLY|O_CREAT, S_IRUSR|S_IWUSR);
       if (fd == -1) {
         errExit("open");
