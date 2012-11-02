@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
   // Check newFd is available
   if (fcntl(tempfd, F_GETFD) > 0) {
     if (close(tempfd) == -1) {
-      errExit("close opened fd as newfd");
+      errExitEN(EBADF, "close opened fd as newfd");
     }
   }
   newfd = fcntl(atoi(argv[1]), F_DUPFD, tempfd);
