@@ -1,5 +1,5 @@
 // Julie Kim (julie114.kim@gmail.com)
-// Probrem5-3.1.Program mimics dup() with fcntl()
+// Probrem5-4.1.Program mimics dup() with fcntl()
 #include <fcntl.h>
 #include <sys/stat.h>
 
