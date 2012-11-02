@@ -3,7 +3,16 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 
+#include "dup.h"
 #include "../lib/tlpi_hdr.h"
+
+int dup(int oldfd) {
+  int newfd;
+  newfd = fcntl(oldfd, F_DUPFD, 3);
+  printf("copied fd:%d\n", newfd);
+  write(newfd, "hello", 5);
+  return newfd;
+}
 
 int main(int argc, char** argv) {
   int newfd;
@@ -12,8 +21,5 @@ int main(int argc, char** argv) {
     usageErr("%s oldfd\n", argv[0]);
   }
 
-  newfd = fcntl(atoi(argv[1]), F_DUPFD, 3);
-  printf("copied fd:%d\n", newfd);
-  write(newfd, "hello", 5);
-  return newfd;
+  return dup(atoi(argv[1]));
 }
