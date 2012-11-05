@@ -14,13 +14,13 @@ static void doJump(int nvar, int rvar, int vvar) {
 int main(int argc, char** argv) {
   int nvar;
   register int rvar; // Allocate to register if it can
-  register int vvar;
+  volatile int vvar;
 
   nvar = 111;
   rvar = 222;
   vvar = 333;
 
-  /* Run afger setjmp(0 */
+  /* Run afger setjmp() */
   if (setjmp(env) == 0) {
     nvar = 777;
     rvar = 888;
