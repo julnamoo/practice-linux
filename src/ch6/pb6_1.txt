@@ -1,0 +1,8 @@
+* result of ls
+-rwxr-xr-x 1 julie julie  8784 2012-11-05 16:05 mem_segments
+-rw-r--r-- 1 julie julie   812 2012-11-05 16:05 mem_segments.c
+*
+Q. Why mem_segments is much smaller though it contains bigger than 10MB mbuf?
+A. Memory segment containing mbuf is in main() frame, uninitialize memory
+segment.
+The region is allocated when initialize the variable after start running.
