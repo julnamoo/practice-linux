@@ -2,8 +2,6 @@
 // setenv(const char* name, const char* value, int overwrite):
 // Allocate new memory buffer for new env var and copy as 'name=value' format.
 // If overwrite is set to 0, it does not overwrite.
-#include <fcntl.h>
-#include <sys/stat.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include "../lib/tlpi_hdr.h"
@@ -21,8 +19,7 @@ void printEnviron() {
 int main(int argc, char** argv) {
   char* old_vars;
   char* value;
-  int overwrite, len, fd;
-  pid_t pid;
+  int overwrite, len;
 
   if (argc != 4 || strcmp(argv[1], "--help") == 0) {
     usageErr("%s name value overwrite\n", argv[0]);
