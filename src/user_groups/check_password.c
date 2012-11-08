@@ -11,7 +11,7 @@
 int main (int argc, char** argv) {
   char *username, *password, *encrypted, *p;
   struct passwd* pwd;
-  struct spwd* spwd;
+  struct spwd* shdpwd;
   Boolean authOk;
   size_t len;
   long lnmax;
@@ -41,13 +41,13 @@ int main (int argc, char** argv) {
   if (pwd == NULL) {
     fatal("couldn't get password record");
   }
-  spwd = getspnam(username);
-  if (spwd == NULL && errno == EACCES) {
+  shdpwd = getspnam(username);
+  if (shdpwd == NULL && errno == EACCES) {
     fatal("no permission to read shadow password file");
   }
 
-  if (spwd != NULL) {
-    pwd->pw_passwd = spwd->sp_pwdp;
+  if (shdpwd != NULL) {
+    pwd->pw_passwd = shdpwd->sp_pwdp;
   }
   password = getpass("Password: ");
   encrypted = crypt(password, pwd->pw_passwd);
@@ -67,5 +67,4 @@ int main (int argc, char** argv) {
 
   printf("Successfully authenticated: UID=%ld\n", (long) pwd->pw_uid);
   exit(EXIT_SUCCESS);
-
 }
