@@ -1,0 +1,4 @@
+Julie Kim (julie114.kim@gmail.com)
+Q. Is a process with the following user IDs privileged?
+real = 0 effective=1000 saved=1000 file-system=1000
+A. This process is pribileged because of real user id, 0 as root.
